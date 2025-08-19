@@ -33,7 +33,7 @@ import { authInterceptor } from './auth.interceptor';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [provideHttpClient(withFetch()),provideHttpClient(withInterceptors([authInterceptor]))],
+  providers: [provideHttpClient(withFetch()),provideHttpClient(withInterceptors([authInterceptor])),{provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 
